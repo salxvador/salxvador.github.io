@@ -74,7 +74,12 @@ p:hover {
 }
 
 a {
-    color: rgb(0, 0, 128);
+    color: rgb(0, 0, 100);
+    text-shadow: 0 0 5px goldenrod;
+}
+
+a:hover {
+    text-shadow: 0 0 7px gold;
 }
 
 q {

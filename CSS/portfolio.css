@@ -1,0 +1,368 @@
+body {
+    margin: 0%;
+    opacity: 1;
+    transition: 1s opacity;
+}
+
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
+
+html {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(64, 0, 0);
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: rgba(128, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    -webkit-animation: moveNav 5s; /*for Safari*/
+    animation: moveNav 5s; /*works for most browsers */
+}
+
+/* moveNav animation effect for moving the nav bar in from the left of the screen */
+@keyframes moveNav {
+    from {left: -100vw;}
+    to {left: 0vw;} 
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: seashell;
+    padding: 12px 18px;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    -webkit-animation: moveNavText 3.75s; /*needed for safari*/
+    animation: moveNavText 3.75s; /*duration must be specified*/ 
+}
+
+/*moveNavText animation effect for moving the navbar text from above the view to the navbar*/
+@keyframes moveNavText {
+    from {top: -100vw;} 
+    to {top: 0vw;} /* This lowers the navbar text onto the navbar */
+}
+
+.navbar a:hover {
+    background-color: seashell;
+    color: rgb(64, 0, 0);
+    font-weight: bold;
+}
+
+.navbar a.active {
+    background-color: seashell;
+    color: rgb(128, 0, 0);
+    font-weight: 600;
+}
+
+.navbar a.active:hover {
+    background-color: lightgray;
+    color: rgb(64, 0, 0);
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 3vw;
+    text-align: center;
+    color: lightgray;
+}
+
+h1:hover {
+    transform: scale(1.1);
+    transition: transform .75s;
+}
+
+p {
+    text-align: justify;
+    color: seashell;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding: 0 15px;
+}
+
+p:hover {
+    transition: transform 1s;
+    transform: scale(1.01);
+}
+
+.center {
+    text-align: center;
+}
+
+a {
+    color: rgb(0, 0, 100);
+    text-shadow: 0 0 5px goldenrod;
+}
+
+a:hover {
+    text-shadow: 0 0 7px gold;
+}
+
+q {
+    font-style: italic;
+    font-weight: 300;
+}
+
+img {
+    filter: grayscale(75%);
+    border-radius: 10px;
+    max-width: 100%;
+    height: 340px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    animation: zoominout 15s forwards; /*ANIM*/
+    animation-iteration-count: 3;
+}
+
+img:hover {
+    filter: grayscale(5%);
+    /*transition: transform 1s;
+    transform: scale(1.1);*/
+}
+
+#bg-vid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+.video-text {
+    background: rgba(0, 0, 0, 0.5); /*semi-transparent BG*/
+    color: seashell;
+    width: 100%;
+    padding: 20px;
+    margin-top: 11px;
+    position: relative; /*allows for use of animation*******************/
+    -webkit-animation: moveVideoText 3.75s;
+    animation: moveVideoText 5.75s;
+}
+
+/*THIS MAKES THE CHECKER PATTERN*/
+* {
+    box-sizing: border-box;
+}
+
+.col-1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px;
+    background-color: seashell;
+    overflow: hidden;
+}
+
+.col-2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+    height: 400px;
+    background-color: rgb(128, 0, 0);
+    overflow: hidden;
+}
+
+.col-tall {
+    padding-top: 3.5%;
+    height: 450px;
+}
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Form on Page was deleted, now this applies to pop-up contact form*/
+label {
+    font-weight: 500;
+    color: seashell;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid goldenrod;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 3px;
+    margin-bottom: 7px;
+    resize: vertical;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover {
+    box-shadow: 0 0 10px goldenrod inset;
+}
+
+input[type="submit"] {
+    background-color: rgb(64, 0, 0);
+    color: seashell;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid goldenrod;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: seashell;
+    color: rgb(64, 0, 0);
+    box-shadow: 0 0 5px goldenrod inset;
+    transition: transform 1.5s;
+    transform: scale(1.3);
+}
+
+footer {
+    padding: 1%;
+    background-color: lightgray;
+}
+
+/*popup form*/
+.open-button {
+    background-color: rgb(64, 0, 0);
+    color: seashell;
+    padding: 10px 15px;
+    border: 1px solid goldenrod;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.8;
+    position: sticky;
+    bottom: 0;
+    float: right;
+    width: 200px;
+    animation: bounce 2s ;
+}
+
+.popup-form {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid goldenrod;
+    z-index: 9;
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: seashell;
+}
+
+.form-container .btn-cancel {
+    background-color: rgb(64, 0, 0);
+    color: seashell;
+    padding: 5px 10px;
+    border: 1px solid goldenrod;
+    border-radius: 3px;
+}
+
+.form-container label {
+    color: rgb(128, 0, 0);
+}
+
+/* SLIDESHOW */
+.slideshow {
+    margin: 50px auto;
+    position: relative;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 25px rgba(218, 165, 32, 0.75);
+}
+
+.slideshow > div {
+    position: absolute;
+    align-content: center;
+    /*top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;*/
+}
+
+.slide > img {
+    animation: none;
+    height: 200px;
+    filter: grayscale(15%);
+}
+
+#slidetext {
+    color: goldenrod;
+}
+
+/* Keyframe for Moving video text */
+@keyframes moveVideoText {
+    from {top: -100vw;} /* This sets the position of the video text to above the viewport */
+    to {top: 0vw;} /* This moves the video text to the normal positioning on the viewport */
+}
+
+/*KeyFrame Anim for popup form open button*/
+@keyframes bounce {
+    0% {bottom: 90%;}
+    70% {bottom: 0%;}
+    100% {bottom: 23px;}
+}
+
+/*Anim for Image Zooming*/
+@keyframes zoominout {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+/*Media Screen Settings*/
+
+/* The @media rule is used in media queries to apply different 
+/*styles for different media/types of devices */
+/* On screens 576px and smaller the images will be 100px 
+/*tall and centered vertically in the column */
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+/*576px and smaller will display navbar links equally distributed*/
+@media screen and (max-width: 576px) {
+    .Navbar a{
+        width: 25%; /*each link takes up 1/4 of the navbar*/
+        font-size: 12px;
+    }
+}
+
+/*576px and smaller will not display the bg vid*/
+@media screen and (max-width: 576px) {
+    #bg-vid {
+        display: none;
+    }
+}
+
+/*576px and smaller will display a scroll bar*/
+@media screen and (max-width: 576px) {
+    .Column_2 {
+        overflow: auto;
+    }
+}

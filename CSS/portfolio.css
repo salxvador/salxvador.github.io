@@ -2,6 +2,10 @@ body {
     margin: 0%;
     opacity: 1;
     transition: 1s opacity;
+    letter-spacing: .2vw;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    user-select: none;
 }
 
 body.fade-out {
@@ -36,9 +40,9 @@ html {
     float: left;
     display: block;
     color: seashell;
-    padding: 12px 18px;
+    padding: .75vw 1vw;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.5vw;
     text-align: center;
     position: relative;
     -webkit-animation: moveNavText 3.75s; /*needed for safari*/
@@ -55,6 +59,7 @@ html {
     background-color: seashell;
     color: rgb(64, 0, 0);
     font-weight: bold;
+    transition: 0.5s ease-in;
 }
 
 .navbar a.active {
@@ -72,6 +77,7 @@ h1 {
     text-transform: uppercase;
     font-size: 3vw;
     text-align: center;
+    margin-top: 3%;
     color: lightgray;
 }
 
@@ -83,9 +89,10 @@ h1:hover {
 p {
     text-align: justify;
     color: seashell;
-    letter-spacing: 1px;
-    font-size: 20px;
-    padding: 0 15px;
+    letter-spacing: .1vw;
+    font-size: 2.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 p:hover {
@@ -115,11 +122,10 @@ img {
     filter: grayscale(75%);
     border-radius: 10px;
     max-width: 100%;
-    height: 340px;
+    height: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    animation: zoominout 15s forwards; /*ANIM*/
+    margin:auto auto auto auto;
+    animation: zoominout 15s forwards;
     animation-iteration-count: 3;
 }
 
@@ -140,8 +146,8 @@ img:hover {
     background: rgba(0, 0, 0, 0.5); /*semi-transparent BG*/
     color: seashell;
     width: 100%;
-    padding: 20px;
-    margin-top: 11px;
+    height: 100vh;
+    padding-top: 2vh;
     position: relative; /*allows for use of animation*******************/
     -webkit-animation: moveVideoText 3.75s;
     animation: moveVideoText 5.75s;
@@ -152,12 +158,13 @@ img:hover {
     box-sizing: border-box;
 }
 
+
 .col-1 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 3%;
-    height: 400px;
+    padding: 1.6%;
+    margin: auto;
+    height: 450px;
     background-color: seashell;
     overflow: hidden;
 }
@@ -165,17 +172,16 @@ img:hover {
 .col-2 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 1.9%;
-    height: 400px;
+    padding: 1.6%;
+    height: 450px;
     background-color: rgb(128, 0, 0);
     overflow: hidden;
 }
 
-.col-tall {
+/*.col-tall {
     padding-top: 3.5%;
     height: 450px;
-}
+}*/
 .row::after {
     content: "";
     display: table;
@@ -192,13 +198,13 @@ input[type="text"],
 input[type="email"],
 input[type="tel"] {
     width: 100%;
-    padding: 8px;
+    padding: .93vw;
     border: 1px solid goldenrod;
     border-radius: 4px;
     box-sizing: border-box;
-    margin-top: 3px;
-    margin-bottom: 7px;
+    margin: .6vw 0 .6vw 0;
     resize: vertical;
+    font-size: 1vw;
 }
 
 input[type="text"]:hover,
@@ -225,43 +231,45 @@ input[type="submit"]:hover {
     background-color: seashell;
     color: rgb(64, 0, 0);
     box-shadow: 0 0 5px goldenrod inset;
-    transition: transform 1.5s;
-    transform: scale(1.3);
+    transition: transform 1s;
+    transform: scale(1.1);
 }
 
 footer {
-    padding: 1%;
+    padding: 2%;
     background-color: lightgray;
 }
 
 /*popup form*/
 .open-button {
-    background-color: rgb(64, 0, 0);
-    color: seashell;
+    background-color: seashell;
+    color: rgb(64, 0, 0);
+    font-size: 2vw;
+    font-weight: 700;
     padding: 10px 15px;
     border: 1px solid goldenrod;
     border-radius: 4px;
     cursor: pointer;
     opacity: 0.8;
-    position: sticky;
-    bottom: 0;
-    float: right;
-    width: 200px;
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
     animation: bounce 2s ;
 }
 
 .popup-form {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 15px;
+    bottom: .5vw;
+    right: .5vw;
     border: 3px solid goldenrod;
     z-index: 9;
 }
 
 .form-container {
-    max-width: 300px;
-    padding: 10px;
+    max-width: 49vw;
+    padding: 1vw;
     background-color: seashell;
 }
 
@@ -273,37 +281,111 @@ footer {
     border-radius: 3px;
 }
 
+.form-container .btn-cancel:hover {
+    background-color: seashell;
+    color: rgb(64, 0, 0);
+    box-shadow: 0 0 5px goldenrod inset;
+    transition: transform 1s;
+    transform: scale(1.1);
+}
+
 .form-container label {
     color: rgb(128, 0, 0);
 }
 
 /* SLIDESHOW */
-.slideshow {
-    margin: 50px auto;
+#slideshow-bg {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.slide {
+    display: none;
+}
+
+#slideshow-container {
+    width: 35vw;
+    height: auto;
+    padding-top: 4%;
     position: relative;
-    border-radius: 10px;
-    width: 200px;
-    height: 200px;
-    box-shadow: 0 0 25px rgba(218, 165, 32, 0.75);
+    margin: auto;
 }
 
-.slideshow > div {
-    position: absolute;
-    align-content: center;
-    /*top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;*/
+#slideshow-conatiner a {
+    text-decoration: none;
 }
 
-.slide > img {
-    animation: none;
-    height: 200px;
+.slide-img {
+    vertical-align: middle;
     filter: grayscale(15%);
+    height: auto;
+    box-shadow: 0 0 25px rgba(218, 165, 32, 0.75);
+    width: 100%;
+    animation: fade 1.5s;
+    -webkit-animation: fade 1.5s;
 }
 
-#slidetext {
-    color: goldenrod;
+@-webkit-keyframes fade {
+    from {opacity: .4;} 
+    to {opacity: 1;} 
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+.previous,
+.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: darkgray;
+    font-weight: bolder;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.previous:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: seashell;
+}
+
+.text {
+    color: seashell;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 0 0 7px 7px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: seashell;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+dot:hover {
+    background-color: black;
 }
 
 /* Keyframe for Moving video text */
@@ -338,31 +420,83 @@ footer {
 /*styles for different media/types of devices */
 /* On screens 576px and smaller the images will be 100px 
 /*tall and centered vertically in the column */
-@media screen and (max-width: 576px) {
-    img {
-        height: 100px;
-        margin-top: 150px;
+@media screen and (max-width: 527px) {
+    p {
+        font-size: 3.75vw;
     }
 }
 
-/*576px and smaller will display navbar links equally distributed*/
-@media screen and (max-width: 576px) {
-    .Navbar a{
-        width: 25%; /*each link takes up 1/4 of the navbar*/
-        font-size: 12px;
+@media screen and (min-width: 528px) and (max-width: 660px) {
+    p {
+        font-size: 3.5vw;
     }
 }
 
-/*576px and smaller will not display the bg vid*/
-@media screen and (max-width: 576px) {
-    #bg-vid {
-        display: none;
+@media screen and (min-width: 661px) and (max-width: 799px) {
+    p {
+        font-size: 2.75vw;
     }
 }
 
-/*576px and smaller will display a scroll bar*/
-@media screen and (max-width: 576px) {
-    .Column_2 {
-        overflow: auto;
+@media screen and (min-width: 800px) and (max-width: 924px) {
+    p {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (min-width: 925px) and (max-width: 1050px) {
+    p {
+        font-size: 2.25vw;
+    }
+}
+
+@media screen and (min-width: 1051px) and (max-width: 1310px) {
+    p {
+        font-size: 2vw;
+    } 
+}
+
+@media screen and (min-width: 1311px) and (max-width: 1535px) {
+    p {
+        font-size: 1.75vw;
+    }
+}
+
+@media screen and (min-width: 1536px) and (max-width: 2269px) {
+    p {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width: 2270px) {
+    p {
+        font-size: 1.35vw;
+    }
+}
+
+/*Media rule for navbar links for different screen sizes*/
+/* Screens 1080px and smaller will display navbar links equally distributed */
+@media screen and (max-width: 1080px) {
+    .navbar a{
+        width: 20%; /* This sets each navbar link to 1/5 of the navbar */
+        font-size: 2.5vw;
+    }
+}
+
+/* Media rules to increase the size of the columns for larger screens */
+@media screen and (min-width: 1725px) {
+    .col-1 {
+        height: 550px;
+    }
+    .col-2 {
+        height: 550px;
+    }
+}
+
+
+/*Media rule to remove margin-top from h1 elements for extra large screens (so that the paragraph text fits in the column*/
+@media screen and (min-width: 2000px) {
+    h1{
+        margin-top: 0;
     }
 }
